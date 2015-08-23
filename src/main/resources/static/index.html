@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+	<title>Market Trade Processor</title>
+	<link rel="stylesheet" href="css/vendor/skeleton/normalize.css">
+	<link rel="stylesheet" href="css/vendor/skeleton/skeleton.css">
+	<link rel="stylesheet" href="css/style.css">
+
+	<link href="//fonts.googleapis.com/css?family=Raleway:400,300,600" rel="stylesheet" type="text/css">
+
+	<script src="js/vendor/jquery/jquery-2.1.4.min.js"></script>
+	<script src="js/vendor/underscorejs/underscore-min.js"></script>
+	<script src="js/vendor/backbonejs/backbone.js"></script>
+	<script src="js/vendor/backbone-polling/backbone-polling.min.js"></script>
+	<script src="https://www.google.com/jsapi"></script>
+	<script src="js/main.js"></script>
+</head>
+
+<body>
+	<div class="container">
+		<div class="row center-text">
+			<h2>Market Trade Processor</h2>
+		</div>
+		<hr>
+		<div class="row center-text">
+			<h4>Latest Trade Message</h4>
+		</div>
+		<div class="row">
+			<div class="eight columns">
+				<div id="world-map"></div>
+			</div>
+			<div id="log" class="four columns" style="display:none;">
+				<table class="u-full-width">
+					<thead>
+						<tr>
+							<th>Sell</th>
+							<th>Currency</th>
+							<th>Rate</th>
+							<th>Country</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td id='latestSell'></td>
+							<td id='latestCur'></td>
+							<td id='latestRate'></td>
+							<td id='latestLoc'></td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+		<hr>
+		<div class="row center-text">
+			<div class="six columns">
+				<h5>Most sold currency</h5>
+				<h1 id="mostSold"></h1>
+			</div>
+			<div class="six columns">
+				<h5>Most bought currency</h5>
+				<h1 id="mostBought"></h1>
+			</div>
+		</div>
+</body>
+
+</html>
