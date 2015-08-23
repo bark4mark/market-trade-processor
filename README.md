@@ -1,6 +1,8 @@
 Market Trade Processor
 ======================
 
+![alt tag]https://raw.githubusercontent.com/bark4mark/market-trade-processor/master/dashboard.gif
+
 Running the app
 ---------------
 The app is built using Spring boot, clone the git repo and run the following:
