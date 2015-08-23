@@ -18,20 +18,20 @@ import co.markhoward.messagetradeprocessor.currency.CurrencyRepository;
  * Controller for trade messages
  */
 @RestController
-public class TradeMessageController 
+public class TradeMessageController
 {
 	private final Publisher<TradeMessage> publisher;
 	private final CurrencyRepository currencyRepository;
-	
+
 	private TradeMessage latest;
-	
+
 	@Autowired
 	public TradeMessageController (Publisher<TradeMessage> publisher, CurrencyRepository currencyRepository)
 	{
 		this.publisher = publisher;
 		this.currencyRepository = currencyRepository;
 	}
-	
+
 	/**
 	 * Accept trade message and publish it to subscribed classes
 	 * @param tradeMessage The message
@@ -45,7 +45,7 @@ public class TradeMessageController
 		publisher.publish(tradeMessage);
 		latest = tradeMessage;
 	}
-	
+
 	/**
 	 * Return the latest {@link TradeMessage}
 	 * @return The latest trade message
@@ -56,7 +56,7 @@ public class TradeMessageController
 	{
 		return latest;
 	}
-	
+
 	/**
 	 * Get the current {@link Currency} that has the most buys and sells
 	 * @return currency stats
@@ -68,24 +68,24 @@ public class TradeMessageController
 	{
 		return this.currencyRepository.getCurrencyStats();
 	}
-	
+
 	private void validateMessage (TradeMessage message) throws IllegalArgumentException
 	{
 		if (valueIsIncorrectLength(message.getCurrencyFrom(), 3))
 			throw new IllegalArgumentException("currencyFrom is incorrect length");
-		
+
 		if (valueIsIncorrectLength(message.getCurrencyTo(), 3))
 			throw new IllegalArgumentException("currencyTo is incorrect length");
-		
-		if (valueIsIncorrectLength(message.getOriginatingCountry(), 1))
+
+		if (valueIsIncorrectLength(message.getOriginatingCountry(), 2))
 			throw new IllegalArgumentException("originatingCountry is incorrect length");
 	}
-	
+
 	private boolean valueIsIncorrectLength (String currency, int length)
 	{
 		if (currency.length() != length)
 			return true;
-		
+
 		return false;
 	}
 }
