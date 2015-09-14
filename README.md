@@ -1,7 +1,7 @@
 Market Trade Processor
 ======================
 
-![alt tag]https://raw.githubusercontent.com/bark4mark/market-trade-processor/master/dashboard.gif
+![Preview of Market Trade Processor](https://raw.githubusercontent.com/bark4mark/market-trade-processor/master/dashboard.gif)
 
 Running the app
 ---------------
